@@ -3,10 +3,12 @@
 
 
 - block:
-    - name: hell
-      include_tasks: backup-sshd-config.yml
-      when:
-
+  - name: backup-sshd-config
+    include_tasks: backup-sshd-config.yml
+    when: 
+  - name: copy-ssh-key
+    include_tasks: copy-ssh-key.yml
+    when: 
 
   when: # DEFINE ENV LATER
   become: yes
